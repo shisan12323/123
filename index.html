@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduQuest - 在线学习平台</title>
+    <style>
+        /* 基础样式 */
+        body, h1, h2, h3, p { margin: 0; padding: 0; }
+        .container { width: 80%; max-width: 1200px; margin: auto; }
+        /* 导航栏样式 */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #333; color: #fff; }
+        nav a { color: #fff; text-decoration: none; margin: 0 1rem; }
+        /* 英雄部分样式 */
+        .hero { background: url('video-placeholder.jpg') no-repeat center center/cover; height: 500px; display: flex; align-items: center; justify-content: center; color: #fff; }
+        .hero h1 { font-size: 2.5rem; }
+        .hero .btn { padding: 0.5rem 1rem; background: #4CAF50; color: white; border: none; cursor: pointer; }
+        /* 其他样式省略... */
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav>
+        <div>EduQuest</div>
+        <div>
+            <a href="#math">数学</a>
+            <a href="#science">科学</a>
+            <a href="#language">语言</a>
+            <a href="#art">艺术</a>
+            <input type="text" placeholder="搜索课程...">
+        </div>
+    </nav>
+
+    <!-- 英雄部分 -->
+    <div class="hero">
+        <h1 id="tagline">按照自己的节奏学习</h1>
+        <button class="btn" onclick="window.location.href='#courses';">开始学习</button>
+    </div>
+
+    <!-- 精选课程部分 -->
+    <div id="courses" class="container">
+        <!-- 课程卡片占位符 -->
+    </div>
+
+    <!-- 学习路径部分 -->
+    <div id="learning-path">
+        <!-- 测验和按钮占位符 -->
+    </div>
+
+    <!-- 成功故事部分 -->
+    <div id="success-stories" class="container">
+        <!-- 推荐占位符 -->
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="container">
+        <nav>
+            <a href="#blog">博客</a>
+            <a href="#faq">常见问题解答</a>
+            <a href="#privacy">隐私政策</a>
+        </nav>
+        <button onclick="openContactModal()">联系我们</button>
+    </footer>
+
+    <!-- 模态窗口示例 -->
+    <div id="contact-modal" style="display: none;">
+        <!-- 模态内容 -->
+    </div>
+
+    <script>
+        // JavaScript 动态标语轮换
+        const taglines = ["按照自己的节奏学习", "发现新的激情", "拓展视野"];
+        let currentTaglineIndex = 0;
+        const taglineElement = document.getElementById('tagline');
+
+        function cycleTagline() {
+            currentTaglineIndex = (currentTaglineIndex + 1) % taglines.length;
+            taglineElement.textContent = taglines[currentTaglineIndex];
+        }
+
+        setInterval(cycleTagline, 3000);
+
+        // 打开联系我们模态窗口的函数
+        function openContactModal() {
+            const modal = document.getElementById('contact-modal');
+            modal.style.display = 'block'; // 显示模态窗口
+            // 模态窗口关闭逻辑
+        }
+    </script>
+
+</body>
+</html>
